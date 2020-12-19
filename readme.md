@@ -24,7 +24,12 @@ jasmine
 
 ## run the app
 
-To run the app
+Run nodejs
 ```
 npm start
+```
+
+Run React app
+```
+npm run client
 ```
