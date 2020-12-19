@@ -3,6 +3,7 @@ var router = express.Router();
 const {MongoClient} = require('mongodb');
 require('dotenv').config()
 
+// Init the db and call treatment method
 async function dbInit() {
 
   // Uri to the database
@@ -15,7 +16,7 @@ async function dbInit() {
     await client.connect();
     const collection = client.db('sample_words').collection('words');
     // Call treatment method
-    var res = await treatment(client, collection);
+    var res = await treatment(collection);
   }
   catch (e) {
       console.error(e);
@@ -27,12 +28,12 @@ async function dbInit() {
 }
 
 // make the treatment and return result
-async function treatment(client, collection){
-  return await findOneWordRandom(client, collection);
+async function treatment(collection){
+  return await findOneWordRandom(collection);
 }
 
 // return ramdom entry of
-async function randomWordEntry(client, collection) {
+async function randomWordEntry(collection) {
   // Get number of doc
   count = await collection.countDocuments();
   // Get a random entry
@@ -41,9 +42,9 @@ async function randomWordEntry(client, collection) {
 }
 
 // Return random word
-async function findOneWordRandom(client, collection){
+async function findOneWordRandom(collection){
   // get randomIndex
-  randomIndex = await randomWordEntry(client, collection);
+  randomIndex = await randomWordEntry(collection);
   // use randomIndex as ID to get a random word && return the name
   var result = await collection.findOne({ id: randomIndex });
   return result.name;
