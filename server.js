@@ -1,5 +1,5 @@
 const express = require('express');
-var wordRouter = require("./routes/word");
+var wordRouter = require("./routes/wordRoute");
 require('dotenv').config()
 
 const app = express();
