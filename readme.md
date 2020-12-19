@@ -6,16 +6,11 @@ Translation web app using NodeJs / ExpressJs / React / MongoDb
 
 To install the dependencies
 ```
-npm install express dotenv mongodb
+npm install
+cd client && npm install
 ```
 
 ## Test
-
-Install the test library (called jasmin)
-```
-npm install --save-dev jasmine
-npm install -g jasmine
-```
 
 Run tests
 ```
@@ -33,3 +28,7 @@ Run React app
 ```
 npm run client
 ```
+
+## Improvement
+
+Remove .env file from the git
