@@ -1,21 +1,14 @@
 var express = require("express");
 var router = express.Router();
-var dbInit = require("../database/db_init")
-const translate = require('@vitalets/google-translate-api');
+var dbInit = require("../database/db_init");
+const {Translate} = require('@google-cloud/translate').v2;
 
 router.get("/", function(req, res) {
+
   // get random french word
   dbInit().then((word) => {
-    // translate in english
-    translate(word, {to: 'en'}).then(trad => {
-      // send word and translation
-      var translate = trad.text;
-      res.send({
-          "word": word,
-          "translate": translate
-        });
-      }).catch(err => {
-        console.error(err);
+    res.send({
+      "word": word
     });
   });
 });
