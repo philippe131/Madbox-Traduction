@@ -31,4 +31,8 @@ npm run client
 
 ## Improvement
 
-Remove .env file from the git
+- Charge a list of word on the front so you don't have to make a request for every word
+
+- Remove nodemodule/@vitalets and Use Google account to translate without limitation
+
+- Upgrade the front
