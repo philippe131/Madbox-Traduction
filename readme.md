@@ -39,6 +39,8 @@ npm run client
 
 - Gamify around the number of life you still had (instead of a number use heart emoji)
 
+- Add unit test
+
 ## Why commit the node_modules/@vitalets
 
 The google translate API was utilisable only if I made an account and add payement methods. I found a way to use it without doing that here :
