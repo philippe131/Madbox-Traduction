@@ -9,6 +9,7 @@ function App() {
   var [compteur, setCompteur] = useState(10);
   var [end, setEnd] = useState('');
 
+  // get a random word + trad and save in props
   async function generateWord() {
     const data = await window.fetch('/word');
     const json = await data.json();
@@ -18,6 +19,7 @@ function App() {
     setGoodTrad(goodTrad);
   }
 
+  // save the client traduction
   async function handleTrad(event) {
     const clientTrad = event.target.value
     setClientTrad(clientTrad);

@@ -7,9 +7,10 @@ router.get("/", function(req, res) {
 
   // get random french word
   dbInit().then((word) => {
+    // get english trad of the word
     translate(word, {to: 'en'}).then(trad => {
-
       var trans = trad.text;
+      // send word and trad
       res.send({
         "word": word,
         "trad": trans
