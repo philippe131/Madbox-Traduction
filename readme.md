@@ -1,4 +1,4 @@
-# Madbox-Traduction
+# Translate App
 
 Translation web app using NodeJs / ExpressJs / React / MongoDb
 
